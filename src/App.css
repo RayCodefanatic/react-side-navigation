@@ -1,0 +1,87 @@
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.side-nav-container {
+  position: relative;
+  /*width: 250px;*/
+  transition: width 0.3s ease;
+}
+
+.side-nav {
+  width: 250px;
+  background-color: #f0f0f0;
+  transition: transform 0.3s ease;
+  position: fixed;
+  height: 100%;
+  left: 0;
+}
+
+.side-nav.closed {
+  transform: translateX(-100%);
+}
+
+.side-nav.open {
+  transform: translateX(0);
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.side-nav nav {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 10px 10px; /* Adjust padding to accommodate the hamburger button */
+}
+
+.accordion {
+  margin: 10px 0;
+}
+
+.accordion-header {
+  background-color: #e0e0e0;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordion-body {
+  padding: 0 10px;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px;
+  color: #34576f;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: #fff;
+  background-color: #34576f;
+}
+
+main {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+  margin-left: 250px; /* Space for the side navigation when open */
+}
+
+.main-collapsed {
+  margin-left: 20px;
+}
+
+.main-expanded {
+  margin-left: 250px;
+}
